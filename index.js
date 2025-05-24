@@ -25,6 +25,17 @@ async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
+    const groupsCollection = client.db('groupDB').collection('groups');
+ app.get("/groups",async (req, res)=> {
+   const cursor =await groupsCollection.find().toArray();
+   res.send(cursor)
+ })
+    app.post("/groups", async (req, res)=> {
+         const newGroup = req.body;
+         const result =await groupsCollection.insertOne(newGroup);
+         res.send(result)
+
+    })
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
