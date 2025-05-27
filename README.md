@@ -1,1 +1,1 @@
-This is the page of server side code. It is connected with mongodb
+This is the page of server side code. It is connected with mongodb. all the private  inofrmation is stored on env
