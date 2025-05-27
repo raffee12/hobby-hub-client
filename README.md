@@ -1,0 +1,1 @@
+This is the page of server side code. It is connected with mongodb
