@@ -1,5 +1,6 @@
 
 const express = require('express')
+const serverless = require("serverless-http");
 const app = express();
 const cors = require("cors");
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
