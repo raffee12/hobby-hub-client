@@ -1,10 +1,10 @@
-
+require('dotenv').config()
 const express = require('express')
-const serverless = require("serverless-http");
+
 const app = express();
 const cors = require("cors");
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
-require('dotenv').config()
+
 const port = process.env.PORT || 3000
 app.use(cors());
 app.use(express.json());
@@ -25,7 +25,7 @@ console.log(process.env.DB_PASS)
 async function run() {
   try {
     
-    await client.connect();
+    // await client.connect();
     const groupsCollection = client.db('groupDB').collection('groups');
     const userCollection = client.db('groupDB').collection('users');
  app.get("/groups",async (req, res)=> {
@@ -86,8 +86,8 @@ res.send(result)
     })
 
 
-    await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    // await client.db("admin").command({ ping: 1 });
+    // console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
     
    
@@ -99,8 +99,10 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`)
+// })
+
+
 // hobbyDreamers
 //pWUoEzA5pU8jCwvA
