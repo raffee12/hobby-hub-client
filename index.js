@@ -1,16 +1,28 @@
 require('dotenv').config()
 const express = require('express')
-
 const app = express();
+app.use(express.json());
 const cors = require("cors");
-const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
+const corsConfig = 
+{origin: "*", 
+  Credential: true,
+   methods: ["GET", "POST", "PUT", "PATCH","DELETE"]};
+   app.options("", cors(corsConfig))
+app.use(cors(corsConfig));
 
 const port = process.env.PORT || 3000
-app.use(cors());
-app.use(express.json());
+
+
+
 
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.0zma47h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+
+
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
+
+
+
 
 const client = new MongoClient(uri, {
   serverApi: {
@@ -25,7 +37,7 @@ console.log(process.env.DB_PASS)
 async function run() {
   try {
     
-    await client.connect();
+    client.connect();
     const groupsCollection = client.db('groupDB').collection('groups');
     const userCollection = client.db('groupDB').collection('users');
  app.get("/groups",async (req, res)=> {
@@ -99,9 +111,9 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-// app.listen(port, () => {
-//   console.log(`Example app listening on port ${port}`)
-// })
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
 
 
 // hobbyDreamers
