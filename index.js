@@ -25,7 +25,7 @@ console.log(process.env.DB_PASS)
 async function run() {
   try {
     
-    // await client.connect();
+    await client.connect();
     const groupsCollection = client.db('groupDB').collection('groups');
     const userCollection = client.db('groupDB').collection('users');
  app.get("/groups",async (req, res)=> {
