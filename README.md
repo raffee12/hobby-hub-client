@@ -1,8 +1,8 @@
 # HobbyHub: A Local Hobby Group Organizer
 
-🚩 **Update:** All updates and feature improvements will be declared here.
 
-🎯 **Requirement Explanation Video:** [Add your video link here]
+
+
 
 ---
 
@@ -44,7 +44,7 @@ HobbyHub is a platform where users can discover and join local hobby-based group
 
 ---
 
-## Challenges Implemented
+## Things Implemented 
 
 - Dark/light theme toggle.
 - Animations using:
@@ -62,10 +62,9 @@ HobbyHub is a platform where users can discover and join local hobby-based group
 
 ## Deployment
 
-- Client hosted on [Netlify / Surge / Firebase] (add your deployed URL)
-- Server hosted on Vercel
+--https://hobby-hub-87f2e.web.app/
 
----
+
 
 ## How to Run Locally
 
@@ -75,24 +74,4 @@ HobbyHub is a platform where users can discover and join local hobby-based group
 4. Run client and server with `npm start` / `npm run dev`.
 5. Access the app on `http://localhost:3000`.
 
----
 
-## What to Submit
-
-- Client-side GitHub repository.
-- Server-side GitHub repository.
-- Live website URL.
-
----
-
-## Author
-
-Your Name  
-[GitHub Profile](https://github.com/your-username)  
-[LinkedIn Profile](https://linkedin.com/in/your-profile)
-
----
-
-## License
-
-This project is licensed under the MIT License.
